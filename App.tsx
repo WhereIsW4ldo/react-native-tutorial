@@ -13,7 +13,7 @@ const Cat = () => {
         }}
         style={{width: 200, height: 200}}
         />
-      <Text>I am {catName ? catName : 'a cat'}, and I am {isHungry ? 'hungry': 'full'}</Text>
+      <Text>Hi, I am {catName ? catName : 'a cat'}, and I am {isHungry ? 'hungry': 'full'}</Text>
       <TextInput
         style={{height: 40}}
         placeholder='Give him a name!'
@@ -33,9 +33,6 @@ const Cafe = () => {
   return (
     <ScrollView>
       <Text>Welcome!</Text>
-      <Cat />
-      <Cat />
-      <Cat />
       <Cat />
     </ScrollView>
   )
