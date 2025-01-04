@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {Text, View, Image, ScrollView, Button} from 'react-native';
+import {Text, View, Image, ScrollView, Button, TextInput} from 'react-native';
 
 const Cat = () => {
   const [isHungry, setIsHungry] = useState(true);
+  const [catName, setCatName] = useState('a cat');
 
   return (
     <View>
@@ -12,11 +13,16 @@ const Cat = () => {
         }}
         style={{width: 200, height: 200}}
         />
-      <Text>I am a cat, and I am {isHungry ? 'hungry': 'full'}</Text>
+      <Text>I am {catName ? catName : 'a cat'}, and I am {isHungry ? 'hungry': 'full'}</Text>
+      <TextInput
+        style={{height: 40}}
+        placeholder='Give him a name!'
+        onChangeText={newText => setCatName(newText)}/>
       <Button
         onPress={() => {
-          setIsHungry(!isHungry);
+          setIsHungry(false);
         }}
+        disabled={!isHungry}
         title={isHungry ? 'Give me some food please!' : 'Thank you for feeding me!'}
       />
     </View>
